@@ -7,7 +7,7 @@ def _import_database():
     if len(sys.argv) < 2:
         raise ValueError(
             'Need Database definition as well, typical use:',
-            'python -m mydash.ponyorm_app.<FUNCTION> db_definition.py')
+            'python -m pony_utils.<FUNCTION> db_definition.py')
     db_file = sys.argv[1]
     pnfn = Path(db_file).absolute()
     file_path = str(pnfn)
@@ -18,7 +18,7 @@ def _import_database():
     db = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(db)
     db_session = db.db_session
-    entities = db.entities
+    entities = db._db.entities
     return db, db_session, entities
 
 

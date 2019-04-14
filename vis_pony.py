@@ -12,7 +12,8 @@ def get_port(s):
 
 def calculate_graph():
 
-    s = gv.Graph('graph', node_attr={'shape': 'plaintext'})
+    s = gv.Graph('graph', node_attr={'shape': 'plaintext'}, engine='neato',
+                 graph_attr={'splines': 'true', 'overlap': 'false'})
 
     edges = []
 
