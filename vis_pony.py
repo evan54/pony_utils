@@ -39,7 +39,7 @@ def calculate_graph():
     s.edges(edges)
 
     s.attr(overlap='false')
-    s.view()
+    s.view(directory='/tmp/')
 
 
 if __name__ == '__main__':

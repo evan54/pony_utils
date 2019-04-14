@@ -26,7 +26,7 @@ class Table2(_db.Entity):
 # CONNECT TO DATABASE
 ###############################################################################
 orm.set_sql_debug(True)
-_db.bind(provider='sqlite', filename='db.sqlite', create_db=True)
+_db.bind(provider='sqlite', filename=':memory:', create_db=True)
 _db.generate_mapping(create_tables=True)
 
 commit = _db.commit
